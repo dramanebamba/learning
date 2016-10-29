@@ -1,0 +1,8 @@
+Bibliothèque des objets Http
+var http = require('http');
+
+Bibliothèque permettant de gérer les urls
+var url = require('url');
+
+Bibliothèque permettant de gérer les requêtes https
+var querystring = require('querystring');
