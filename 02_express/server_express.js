@@ -12,9 +12,13 @@ app.get('/', function(req, res) {
     res.end('Vous êtes dans la cave à vins, ces bouteilles sont à moi !');
 })
 
-.get('/etage/:etagenum/chambre', function(req, res) {
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Vous êtes à la chambre de l\'étage n°' + req.params.etagenum);
+// .get('/etage/:etagenum/chambre', function(req, res) {
+//     res.render('chambre.ejs', {etage: req.params.etagenum});
+// });
+
+.get('/compter/:nombre', function(req, res) {
+    var noms = ['Robert', 'Jacques', 'David'];
+    res.render('page.ejs', {compteur: req.params.nombre, noms: noms});
 });
 
 app.use(function(req, res, next){
