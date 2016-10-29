@@ -1,13 +1,26 @@
 var express = require('express');
+var session = require('cookie-session'); // Charge le middleware de sessions
+var bodyParser = require('body-parser'); // Charge le middleware de gestion des paramètres
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var app = express();
 
-app.get('/', function(req, res) {
-    res.render('index.ejs');
-});
 
-app.get('/todolist', function(req, res) {
-    res.render('todolist.ejs');
+/* On utilise les sessions */
+app.use(session({secret: 'todotopsecret'}))
+
+
+/* Gestion des routes en-dessous*/
+.get('/todo', function(req, res) {
+
+})
+
+.get('/todo/ajouter', function(req, res){
+
+})
+
+.get('/todo/delete', function(req, res){
+
 })
 
 app.use(function(req, res, next){
